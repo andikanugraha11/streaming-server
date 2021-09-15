@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+    vjs-dev:
+        container_name: vjs-api-dev
+        image: vjs-api-dev:1.0.0
+        build:
+            context: .
+        command: tail -f /dev/null
+        # command: npm run start:dev
+        ports:
+            - 3000:3000
+        volumes:
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
+ 
+
+    # nginx:
+    #     image: nginx
+    #     container_name: smartchange-api-nginx
+    #     ports:
+    #     - "80:80"
+    #     - "443:443"
+    #     volumes:
+    #     - ./nginx:/etc/nginx/conf.d
+    #     # extra_hosts:
+    #     # - "host.docker.internal:host-gateway"
+        

@@ -12,7 +12,7 @@ app.get("/video", function(req, res){
         res.status(400).send("Requires Range header");
     }
 
-    const videoPath = "video/myvid.mp4";
+    const videoPath = "video/large.mp4";
     const videoSize = fs.statSync(videoPath).size;
 
     // Parse Range
